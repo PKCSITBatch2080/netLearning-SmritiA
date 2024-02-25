@@ -16,6 +16,14 @@ class Program
 
 		Console.WriteLine($"Hello {fullName}!");
 		Console.WriteLine($"Your DOB is :{dob.ToString("dddd, dd MMMM yyyy")}");
+		
+		 TimeSpan age = DateTime.Now - dob;
+            int years = (int)(age.Days / 365.25);
+            int months = (int)((age.Days % 365.25) / 30.44);
+            int weeks = (int)((age.Days % 365.25) % 30.44 / 7);
+            int days = (int)((age.Days % 365.25) % 30.44 % 7);
+
+        Console.WriteLine($"Age as of now: {years} Years {months} Months {weeks} Weeks {days} Days");
 	}
 }
 
